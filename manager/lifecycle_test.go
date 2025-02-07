@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"api-plugin-sdk/interfaces"
+	"github.com/orbit-center/orbitapi-plugin-sdk/interfaces"
 )
 
 // MockPlugin 用于测试的模拟插件

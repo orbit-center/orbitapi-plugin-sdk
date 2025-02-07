@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"api-plugin-sdk/interfaces"
+	"github.com/orbit-center/orbitapi-plugin-sdk/interfaces"
 )
 
 func TestHTTPCommunicator(t *testing.T) {

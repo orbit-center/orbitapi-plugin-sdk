@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"sync"
 
-	"api-plugin-sdk/interfaces"
+	"github.com/orbit-center/orbitapi-plugin-sdk/interfaces"
 )
 
 // LifecycleManager 插件生命周期管理器

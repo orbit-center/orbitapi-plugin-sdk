@@ -1,3 +1,3 @@
-module api-plugin-sdk
+module github.com/orbit-center/orbitapi-plugin-sdk
 
 go 1.21

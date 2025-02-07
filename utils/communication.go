@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"api-plugin-sdk/interfaces"
+	"github.com/orbit-center/orbitapi-plugin-sdk/interfaces"
 )
 
 // HTTPCommunicator HTTP 通信实现
