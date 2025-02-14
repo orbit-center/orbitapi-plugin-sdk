@@ -14,13 +14,16 @@ type Plugin interface {
 
 	// GetInfo 获取插件信息
 	GetInfo() PluginInfo
+
+	// GetStatus 获取插件状态
+	GetStatus() PluginStatus
 }
 
 // PluginInfo 插件基本信息
 type PluginInfo struct {
 	Name    string            // 插件名称
 	Version string            // 插件版本
-	Status  string            // 插件状态
+	Status  PluginStatus      // 插件状态
 	Meta    map[string]string // 插件元数据
 }
 

@@ -20,11 +20,12 @@ func NewConfigManager(configDir string) *ConfigManager {
 	}
 }
 
-// Config 配置结构体
+// Config 插件配置结构
 type Config struct {
-	Name    string                 `json:"name"`
-	Version string                 `json:"version"`
-	Params  map[string]interface{} `json:"params"`
+	BaseURL string                 `json:"base_url"` // API基础地址
+	Token   string                 `json:"token"`    // 认证令牌
+	Params  map[string]interface{} `json:"params"`   // 可选参数配置
+	Debug   bool                   `json:"debug"`    // 是否开启调试模式
 }
 
 // LoadConfig 加载指定环境的配置

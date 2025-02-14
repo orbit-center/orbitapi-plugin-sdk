@@ -20,11 +20,9 @@ func TestConfigManager(t *testing.T) {
 
 	// 创建测试配置文件
 	testConfig := &Config{
-		Name:    "Test Plugin",
-		Version: "1.0.0",
-		Params: map[string]interface{}{
-			"key": "value",
-		},
+		BaseURL: "http://127.0.0.1:8081/api/v1",
+		Token:   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzk2MDQ3MjMsInVzZXJfaWQiOjF9.SMIVWvf-5AhBgcakRuFrcrqpdfP_l8yUvZbx2wRlBLc",
+		Params:  map[string]interface{}{"key": "value"},
 	}
 
 	configFile := filepath.Join(tempDir, "config.dev.json")
@@ -46,12 +44,12 @@ func TestConfigManager(t *testing.T) {
 			t.Fatalf("加载配置失败: %v", err)
 		}
 
-		if config.Name != testConfig.Name {
-			t.Errorf("配置名称不匹配: 期望 %s, 实际 %s", testConfig.Name, config.Name)
+		if config.BaseURL != testConfig.BaseURL {
+			t.Errorf("配置名称不匹配: 期望 %s, 实际 %s", testConfig.BaseURL, config.BaseURL)
 		}
 
-		if config.Version != testConfig.Version {
-			t.Errorf("配置版本不匹配: 期望 %s, 实际 %s", testConfig.Version, config.Version)
+		if config.Token != testConfig.Token {
+			t.Errorf("配置版本不匹配: 期望 %s, 实际 %s", testConfig.Token, config.Token)
 		}
 
 		value, ok := config.Params["key"].(string)
@@ -63,11 +61,8 @@ func TestConfigManager(t *testing.T) {
 	// 测试保存配置
 	t.Run("SaveConfig", func(t *testing.T) {
 		newConfig := &Config{
-			Name:    "New Plugin",
-			Version: "2.0.0",
-			Params: map[string]interface{}{
-				"new_key": "new_value",
-			},
+			BaseURL: "http://127.0.0.1:8081/api/v1",
+			Token:   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzk2MDQ3MjMsInVzZXJfaWQiOjF9.SMIVWvf-5AhBgcakRuFrcrqpdfP_l8yUvZbx2wRlBLc",
 		}
 
 		if err := manager.SaveConfig("prod", newConfig); err != nil {
